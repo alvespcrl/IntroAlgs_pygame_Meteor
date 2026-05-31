@@ -6,80 +6,37 @@ A proposta deve apresentar uma ideia simples, clara e viável para ser desenvolv
 
 ## 1. Nome provisório do jogo
 
-Escreva aqui o nome provisório do jogo.
+> LALA Space
 
-Exemplo:
-
-> Corrida dos Obstáculos
 
 ## 2. Integrantes do grupo
 
 Liste os integrantes do grupo.
 
-- Nome 1:
+- Nome 1: Gustavo Alves Costa Sousa
 - Nome 2:
 - Nome 3:
 - Nome 4:
 
 ## 3. Tipo de jogo
 
-Indique o tipo de jogo que será desenvolvido.
-
-Exemplos:
-
-- jogo de desviar de obstáculos;
-- jogo de coleta de itens;
-- labirinto simples;
-- jogo de perguntas e respostas;
-- jogo de memória;
-- Pong;
-- Snake;
-- Breakout;
-- nave desviando de meteoros;
-- corrida simples com obstáculos;
-- jogo de clique rápido;
-- jogo de sobrevivência simples.
-
 Tipo escolhido pelo grupo:
 
-> Escreva aqui.
+> Nave desviando e Atirando em Obstáculos.
 
 ## 4. Descrição geral do jogo
 
-Explique, em poucas linhas, como o jogo funcionará.
-
-Procure responder:
-
-- O que aparece na tela?
-- O que o jogador controla?
-- O que o jogador precisa fazer?
-- Quais desafios aparecem durante a partida?
-
 Descrição:
 
-> Escreva aqui.
+> O jogador contrala uma nave espacial que se movimenta para esquerda e direita para desviar e destruir meteoros e para cada meteoro destruído o jogador acumula pontos. O jogo a medida que passa fica cada vez mais dificil com o aumento da velocidade e qauntidade de meteoros.
 
 ## 5. Objetivo do jogador
 
-Explique qual é o objetivo principal do jogador.
-
-Exemplos:
-
-- coletar o maior número possível de itens;
-- sobreviver pelo maior tempo possível;
-- chegar até o final do labirinto;
-- acertar alvos;
-- responder perguntas corretamente;
-- evitar obstáculos;
-- quebrar todos os blocos.
-
 Objetivo:
 
-> Escreva aqui.
+> Sobreviver o maior tempo possível e destruir meteoros para acumular pontos
 
 ## 6. Regras principais
-
-Liste as principais regras do jogo.
 
 Exemplo:
 
@@ -135,23 +92,15 @@ Descreva os principais elementos que farão parte do jogo.
 
 ## Jogador ou elemento principal
 
-Exemplo:
-
-> Um personagem controlado pelas setas do teclado.
-
 Descrição:
 
-> Escreva aqui.
+> Nave controlada pelo "a" e "d" e as setas "<" e ">" e espaço para atirar. 
 
 ## Obstáculos, inimigos ou desafios
 
-Exemplo:
-
-> Obstáculos aparecem em posições aleatórias e devem ser evitados.
-
 Descrição:
 
-> Escreva aqui.
+> Meteoros aparecem em posições aleatórias e devem ser evitados ou destruídos.
 
 ## Itens, alvos ou objetos de interação
 
