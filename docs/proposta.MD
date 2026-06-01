@@ -14,9 +14,9 @@ A proposta deve apresentar uma ideia simples, clara e viável para ser desenvolv
 Liste os integrantes do grupo.
 
 - Nome 1: Gustavo Alves Costa Sousa
-- Nome 2:
-- Nome 3:
-- Nome 4:
+- Nome 2: Allan Cristian Rodrigues
+- Nome 3: Lourenço Hamdan Quirino Costa
+- Nome 4: Luíz Felipe Pereira Guimarães
 
 ## 3. Tipo de jogo
 
@@ -38,57 +38,35 @@ Objetivo:
 
 ## 6. Regras principais
 
-Exemplo:
-
-- O jogador começa com 3 vidas.
-- Cada moeda coletada vale 10 pontos.
-- Cada colisão com obstáculo remove 1 vida.
-- A partida termina quando as vidas chegam a zero.
-- O jogador vence se alcançar 100 pontos.
-
 Regras do grupo:
 
-- Regra 1:
-- Regra 2:
-- Regra 3:
-- Regra 4:
-- Regra 5:
+- Regra 1: A nave pode se mover para esquerda e direita.
+- Regra 2: O jogador pode disparar tiros.
+- Regra 3: Meteoros caem do topo da tela.
+- Regra 4: Quando um tiro atinge um meteoro, ele é destruído.
+- Regra 5: Quando um meteoro atinge a nave, o jogador perde uma vida.
+- Regra 6: Novos meteoros surgem continuamente.
+- Regra 7: A dificuldade aumenta ao longo do tempo.
 
 ## 7. Condição de vitória
 
-Explique como o jogador vence ou conclui o jogo.
-
-Exemplos:
-
-- atingir determinada pontuação;
-- chegar ao final da fase;
-- sobreviver até o tempo acabar;
-- responder uma quantidade mínima de perguntas;
-- quebrar todos os blocos.
-
 Condição de vitória:
 
-> Escreva aqui.
+> Não existe vitória. O objetivo é fazer a maior pontuação possível.
 
 ## 8. Condição de derrota ou encerramento
 
-Explique como o jogador perde ou quando a partida termina.
-
-Exemplos:
-
-- perder todas as vidas;
-- acabar o tempo;
-- colidir com determinado obstáculo;
-- errar muitas perguntas;
-- deixar a bola cair, no caso de Breakout ou Pong.
-
-Condição de derrota ou encerramento:
-
-> Escreva aqui.
+> Perder todas as 3 vidas.
 
 ## 9. Elementos previstos no jogo
 
-Descreva os principais elementos que farão parte do jogo.
+    Nave espacial
+    Meteoros
+    Tiros
+    Contador de pontos
+    Sistema de vidas
+    Tela inicial
+    Tela de Game Over
 
 ## Jogador ou elemento principal
 
@@ -104,23 +82,19 @@ Descrição:
 
 ## Itens, alvos ou objetos de interação
 
-Exemplo:
-
-> Moedas aparecem na tela e aumentam a pontuação quando coletadas.
-
 Descrição:
 
-> Escreva aqui.
+> O jogador controla uma nave espacial e deve destruir meteoros utilizando projéteis. Os meteoros surgem aleatoriamente na parte superior da tela. Os tiros disparados podem destruir os meteoros antes que eles atinjam o jogador.
 
 ## Pontuação, vidas, tempo ou progresso
 
 Exemplo:
 
-> O jogador começa com 3 vidas e ganha 10 pontos por item coletado.
+> O jogador inicia a partida com 3 vidas. Cada meteoro destruído concede 10 pontos. A partida termina quando todas as vidas forem perdidas.
 
 Descrição:
 
-> Escreva aqui.
+> O jogador inicia a partida com 3 vidas. Cada meteoro destruído concede 10 pontos. A partida termina quando todas as vidas forem perdidas ou quando o jogador for eliminado
 
 ## 10. Controles previstos
 
@@ -128,8 +102,6 @@ Informe os comandos que serão utilizados pelo jogador.
 
 Exemplo:
 
-- Seta para cima: mover para cima
-- Seta para baixo: mover para baixo
 - Seta para esquerda: mover para esquerda
 - Seta para direita: mover para direita
 - Espaço: realizar ação
@@ -137,99 +109,54 @@ Exemplo:
 
 Controles do grupo:
 
-- Tecla/comando:
-- Tecla/comando:
-- Tecla/comando:
+- Tecla/comando: A ou Seta para esquerda: mover a nave para a esquerda
+- Tecla/comando: D ou Seta para direita: mover a nave para a direita
+- Tecla/comando: Espaço: Para atirar projeteis
+- Tecla/comando: ESC: Sair do jogo
 
 ## 11. Organização inicial do código
 
-Explique como o grupo pretende organizar o código.
-
-Exemplo:
-
-- `main.py`: inicia o jogo;
-- `src/jogo.py`: contém o loop principal;
-- `src/config.py`: guarda configurações como tamanho da tela e cores;
-- `src/funcoes.py`: contém funções auxiliares;
-- `src/dados.py`: contém funções de leitura e escrita de arquivos.
-
 Organização planejada:
 
-> Escreva aqui.
+> main.py: inicia a execução do jogo; 
+> src/jogo.py: contém o loop principal do jogo;
+> src/jogador.py: funções relacionadas à nave do jogador;
+> src/meteoro.py: criação e movimentação dos meteoros;
+> src/tiro.py: criação e movimentação dos projéteis;
+> src/config.py: configurações gerais do jogo;
+> src/dados.py: leitura e escrita de recordes em arquivo.
 
 
 ## 12. Recursos externos previstos
 
-Informe se o grupo pretende utilizar imagens, sons, fontes, tutoriais ou códigos externos.
-
-Exemplo:
-
-- imagens obtidas de banco gratuito;
-- sons gratuitos;
-- tutorial usado apenas como referência;
-- fonte personalizada.
-
 Recursos previstos:
 
-> Escreva aqui.
-
-Caso não pretenda utilizar recursos externos, escreva:
-
-> Não pretendemos utilizar recursos externos.
+> imagens gratuitas para a nave e meteoros;
+> sons gratuitos para tiros e explosões;
+> tutoriais de Pygame utilizados apenas como referência;
+> fonte padrão do Pygame para exibição dos textos.
 
 ## 13. Principais dificuldades esperadas
 
-Liste as dificuldades que o grupo acredita que poderá enfrentar.
-
-Exemplos:
-
-- movimentação do jogador;
-- colisão entre objetos;
-- controle de tempo;
-- criação do ranking;
-- organização do código;
-- uso do GitHub;
-- testes;
-- exibição de textos na tela.
-
 Dificuldades previstas:
 
-- Dificuldade 1:
-- Dificuldade 2:
-- Dificuldade 3:
+- Dificuldade 1: Implementação das colisões entre tiros e meteoros;
+- Dificuldade 2: Controle do surgimento e movimentação dos meteoros;
+- Dificuldade 3: Organização do código em módulos e funções.
 
 ## 14. Escopo mínimo para a entrega final
 
-Descreva qual será a versão mínima aceitável do jogo.
-
-Esta seção é importante para evitar que o grupo escolha uma ideia grande demais.
-
-Exemplo:
-
-> A versão mínima do jogo terá um personagem controlado pelo teclado, obstáculos aparecendo na tela, sistema de vidas, sistema de pontuação e tela de fim de jogo.
-
 Escopo mínimo:
 
-> Escreva aqui.
+> A versão mínima do jogo terá uma nave controlada pelo teclado, meteoros surgindo na tela, sistema de disparos, sistema de vidas, sistema de pontuação e tela de fim de jogo.
 
 ## 15. Possíveis melhorias, caso haja tempo
 
-Liste funcionalidades extras que o grupo poderá implementar se conseguir concluir o escopo mínimo.
-
-Exemplos:
-
-- tela inicial;
-- sons;
-- fases;
-- aumento de dificuldade;
-- ranking;
-- animações;
-- novos tipos de obstáculos;
-- diferentes personagens;
-- menu de pausa.
-
 Melhorias possíveis:
 
-- Melhoria 1:
-- Melhoria 2:
-- Melhoria 3:
+- Melhoria 1: Tela inicial e menu de pausa;
+- Melhoria 2: Aumento progressivo da dificuldade;
+- Melhoria 3: Diferentes tipos de meteoros;
+- Melhoria 4: Ranking de pontuações;
+- Melhoria 5: Efeitos sonoros e animações;
+- Melhoria 6: Poderes especiais para a nave.
