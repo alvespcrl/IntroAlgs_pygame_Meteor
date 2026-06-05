@@ -98,15 +98,6 @@ Descrição:
 
 ## 10. Controles previstos
 
-Informe os comandos que serão utilizados pelo jogador.
-
-Exemplo:
-
-- Seta para esquerda: mover para esquerda
-- Seta para direita: mover para direita
-- Espaço: realizar ação
-- ESC: sair do jogo
-
 Controles do grupo:
 
 - Tecla/comando: A ou Seta para esquerda: mover a nave para a esquerda
