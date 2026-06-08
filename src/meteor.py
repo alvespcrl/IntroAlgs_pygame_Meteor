@@ -37,6 +37,7 @@ if __name__ == "__main__":
 
     print("Meteoros criados:")
     print(meteoros)
+    
 
     mover_meteoros(meteoros)
 

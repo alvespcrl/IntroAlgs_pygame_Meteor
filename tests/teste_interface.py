@@ -1,5 +1,5 @@
 import pygame
-from interface import desenhar_pontuacao, desenhar_vidas
+from src.interface import desenhar_pontuacao, desenhar_vidas
 
 pygame.init()
 
