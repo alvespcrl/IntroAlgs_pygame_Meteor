@@ -2,7 +2,8 @@ import pygame
 from src.meteor import (
     criar_meteoro,
     mover_meteoros,
-    remover_meteoros
+    remover_meteoros,
+    aumentar_dificuldade
 )
 
 from src.interface import (
@@ -26,6 +27,7 @@ def executar_jogo():
     meteoros = []
     pontos = 0
     vidas = 3
+    tempo_inicio = pygame.time.get_ticks()
     jogador = Jogador()
     lista_tiros = []
 
@@ -34,6 +36,11 @@ def executar_jogo():
     while rodando:
 
         relogio.tick(60)
+
+        tempo_atual = pygame.time.get_ticks()
+        nivel = (tempo_atual - tempo_inicio) // 10000
+
+        aumentar_dificuldade(meteoros, nivel)
 
         for evento in pygame.event.get():
 
@@ -53,7 +60,9 @@ def executar_jogo():
         teclas = pygame.key.get_pressed()
         jogador.movimentar(teclas)
 
-        if len(meteoros) < 5:
+        max_meteoros = 5 + nivel
+
+        if len(meteoros) < max_meteoros:
             meteoros.append(criar_meteoro())
 
         mover_meteoros(meteoros)

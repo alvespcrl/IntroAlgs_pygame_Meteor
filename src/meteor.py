@@ -5,8 +5,8 @@ def criar_meteoro():
     meteoro = {
         "x": random.randint(0, 760),
         "y": -40,
-        "velocidade": 5,
-        "tamanho": 40
+        "velocidade": random.randint(3, 8),
+        "tamanho": random.randint(20, 60)
     }
 
     return meteoro
@@ -26,6 +26,11 @@ def remover_meteoros(meteoros, altura_tela):
         for meteoro in meteoros
         if meteoro["y"] < altura_tela
     ]
+
+# aumenta a velocidade dos meteoros
+def aumentar_dificuldade(meteoros, nivel):
+    for meteoro in meteoros:
+        meteoro["velocidade"] = 5 + nivel
 
 # TESTE
 if __name__ == "__main__":
