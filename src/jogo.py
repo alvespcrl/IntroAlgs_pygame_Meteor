@@ -1,18 +1,24 @@
 import pygame
-from meteor import (
+
+
+from src.meteor import (
     criar_meteoro,
     mover_meteoros,
     remover_meteoros,
     aumentar_dificuldade
 )
 
-from interface import (
+from src.jogador import Jogador
+from src.tiro import Tiro
+
+from src.interface import (
     desenhar_pontuacao,
-    desenhar_vidas
+    desenhar_vidas,
+    desenhar_recorde
 )
 
-from jogador import Jogador
-from tiro import Tiro
+from src.dados import carregar_recorde, salvar_recorde
+from src.config import CAMINHO_RECORDE
 
 def executar_jogo():
     """Executa o loop principal do jogo e controla estado, colisões e pontuação."""
@@ -27,6 +33,7 @@ def executar_jogo():
     meteoros = []
     pontos = 0
     vidas = 3
+    recorde = carregar_recorde(CAMINHO_RECORDE)
     tempo_inicio = pygame.time.get_ticks()
     jogador = Jogador()
     lista_tiros = []
@@ -115,6 +122,9 @@ def executar_jogo():
                         meteoros.remove(meteoro)
 
                     pontos += 10
+                    if pontos > recorde:
+                        recorde = pontos
+                        salvar_recorde(CAMINHO_RECORDE, recorde)
                     acertou = True
                     break
 
@@ -139,6 +149,8 @@ def executar_jogo():
 
         desenhar_pontuacao(tela, pontos)
         desenhar_vidas(tela, vidas)
+        desenhar_recorde(tela, recorde)
+
 
         pygame.display.flip()
 
