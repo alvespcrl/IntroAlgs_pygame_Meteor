@@ -8,7 +8,7 @@ class Tiro:
 
     def atualizar(self):
       
-        self.rect.x += self.velocidade
+        self.rect.y -= self.velocidade
 
     def desenhar(self, tela):
 

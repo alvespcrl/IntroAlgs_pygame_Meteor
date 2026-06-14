@@ -8,6 +8,7 @@ class Jogador:
         self.velocidade = 5
         self.largura = 40
         self.altura = 30
+        self.vidas = 3
 
     def movimentar(self, teclas):
       
@@ -30,3 +31,12 @@ class Jogador:
         ponto2 = (self.x, self.y)
         ponto3 = (self.x, self.y + self.altura)
         pygame.draw.polygon(tela, (0, 255, 0), [ponto1, ponto2, ponto3])
+
+    @property
+    def rect(self):
+        return pygame.Rect(
+            self.x,
+            self.y,
+            self.largura,
+            self.altura
+    )
