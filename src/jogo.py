@@ -57,8 +57,8 @@ def executar_jogo():
                 if evento.key == pygame.K_SPACE:
 
                     novo_tiro = Tiro(
-                        jogador.x + jogador.largura,
-                        jogador.y + jogador.altura // 2 - 2
+                        jogador.x, #jogador.largura // 2, #+ jogador.largura,
+                        jogador.y #- jogador.altura // 2 - 2
                     )
                     lista_tiros.append(novo_tiro)
 
