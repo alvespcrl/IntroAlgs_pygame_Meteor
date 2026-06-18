@@ -5,8 +5,10 @@ def criar_meteoro():
     meteoro = {
         "x": random.randint(0, 760),
         "y": -40,
-        "velocidade": random.randint(3, 8),
-        "tamanho": random.randint(20, 60)
+        "velocidade": random.randint(2, 10),
+        "tamanho": random.randint(25, 70),
+        "angulo": random.randint(0, 360),
+        "rotacao": random.randint(1, 5)
     }
 
     return meteoro
@@ -14,6 +16,7 @@ def criar_meteoro():
 # move um meteoro
 def mover_meteoro(meteoro):
     meteoro["y"] += meteoro["velocidade"]
+    meteoro["angulo"] += meteoro["rotacao"]
 # move todos meteoros da lista
 def mover_meteoros(meteoros):
     for meteoro in meteoros:

@@ -23,10 +23,13 @@ from src.config import CAMINHO_RECORDE
 def executar_jogo():
     """Executa o loop principal do jogo e controla estado, colisões e pontuação."""
     pygame.init()
-    
-
+        
     tela = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("LALA Space")
+
+    imagem_meteoro = pygame.image.load(
+        "assets/imagens/meteoro.png"
+    ).convert_alpha()
 
     relogio = pygame.time.Clock()
     
@@ -37,6 +40,7 @@ def executar_jogo():
     tempo_inicio = pygame.time.get_ticks()
     jogador = Jogador()
     lista_tiros = []
+    explosoes = []
 
     rodando = True
     ultimo_meteoro = pygame.time.get_ticks()
@@ -65,7 +69,7 @@ def executar_jogo():
         teclas = pygame.key.get_pressed()
         jogador.movimentar(teclas)
 
-        max_meteoros = 5 + nivel
+        max_meteoros = min(15, 5 + nivel)
 
         agora = pygame.time.get_ticks()
         if agora - ultimo_meteoro > 1000:
@@ -121,6 +125,12 @@ def executar_jogo():
                     if meteoro in meteoros:
                         meteoros.remove(meteoro)
 
+                        explosoes.append({
+                            "x": meteoro["x"],
+                            "y": meteoro["y"],
+                            "tempo": 15
+                        })
+
                     pontos += 10
                     if pontos > recorde:
                         recorde = pontos
@@ -140,12 +150,40 @@ def executar_jogo():
             tiro.desenhar(tela)
 
         for meteoro in meteoros:
-            pygame.draw.circle(
-                tela,
-                (150, 150, 150),
-                (meteoro["x"], meteoro["y"]),
-                meteoro["tamanho"] // 2
+
+            tamanho = meteoro["tamanho"]
+
+            sprite = pygame.transform.scale(
+               imagem_meteoro,
+                (tamanho, tamanho)
             )
+
+            sprite = pygame.transform.rotate(
+                sprite,
+                meteoro["angulo"]
+            )
+
+            tela.blit(
+                sprite,
+                (
+                    meteoro["x"] - tamanho // 2,
+                    meteoro["y"] - tamanho // 2
+                )
+            )
+
+            for explosao in explosoes[:]:
+
+                pygame.draw.circle(
+                    tela,
+                    (255, 150, 0),
+                    (explosao["x"], explosao["y"]),
+                    explosao["tempo"] * 2
+                )
+
+                explosao["tempo"] -= 1
+
+                if explosao["tempo"] <= 0:
+                    explosoes.remove(explosao)
 
         desenhar_pontuacao(tela, pontos)
         desenhar_vidas(tela, vidas)
