@@ -10,6 +10,12 @@ class Jogador:
         self.altura = 30
         self.vidas = 3
 
+        self.imagem = pygame.image.load("imagens/nave/nave1.png")
+        self.imagem = pygame.transform.scale(
+            self.imagem,
+            (self.largura, self.altura)
+        )
+
     def movimentar(self, teclas):
       
         if teclas[pygame.K_UP] or teclas[pygame.K_w]:
@@ -26,17 +32,7 @@ class Jogador:
         if self.y > 600 - self.altura: self.y = 600 - self.altura
 
     def desenhar(self, tela):
-      
-        #ponto1 = (self.x + self.largura, self.y + self.altura // 2) # baixo direita
-        #ponto2 = (self.x, self.y) # ponta
-        #ponto3 = (self.x + self.largura, self.y - self.altura // 2) #
-
-        ponto1 = (self.x + self.altura //2, self.y + self.largura) # baixo direita
-        ponto2 = (self.x, self.y) # ponta
-        ponto3 = (self.x - self.altura // 2, self.y + self.largura) #
-
-        pygame.draw.polygon(tela, (0, 255, 0), [ponto2, ponto3, ponto1]) # [,esq,]
-
+        tela.blit(self.imagem, (self.x, self.y))
     @property
     def rect(self):
         return pygame.Rect(

@@ -35,13 +35,14 @@ def aumentar_dificuldade(meteoros, nivel):
     for meteoro in meteoros:
         meteoro["velocidade"] = 5 + nivel
 
-# TESTE
+#testes
 if __name__ == "__main__":
 
     meteoros = []
 
     for i in range(5):
         meteoros.append(criar_meteoro())
+        
 
     print("Meteoros criados:")
     print(meteoros)
