@@ -15,7 +15,10 @@ from src.tiro import Tiro
 from src.interface import (
     desenhar_pontuacao,
     desenhar_vidas,
-    desenhar_recorde
+    desenhar_recorde,
+    desenhar_mensagem,
+    tela_inicial,
+    tela_game_over
 )
 
 from src.dados import carregar_recorde, salvar_recorde
@@ -264,6 +267,23 @@ def executar_jogo():
     tela = pygame.display.set_mode((800, 600))
     pygame.display.set_caption("LALA Space")
 
+    esperando = True
+
+    while esperando:
+
+        tela_inicial(tela)
+
+        for evento in pygame.event.get():
+
+            if evento.type == pygame.QUIT:
+                pygame.quit()
+                return
+
+            if evento.type == pygame.KEYDOWN:
+
+                if evento.key == pygame.K_RETURN:
+                    esperando = False
+
     imagem_meteoro = pygame.image.load(
         "assets/imagens/meteoro.png"
     ).convert_alpha()
@@ -435,6 +455,23 @@ def executar_jogo():
 
 
         pygame.display.flip()
+
+    # Tela de Game Over
+    esperando = True
+
+    while esperando:
+
+        tela_game_over(tela, pontos, recorde)
+
+        for evento in pygame.event.get():
+
+            if evento.type == pygame.QUIT:
+                esperando = False
+
+            if evento.type == pygame.KEYDOWN:
+
+                if evento.key == pygame.K_ESCAPE:
+                    esperando = False
 
     pygame.quit()
 
