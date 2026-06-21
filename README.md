@@ -6,10 +6,10 @@ Este repositório é um template para os grupos da disciplina. A proposta é com
 
 ## Integrantes do grupo
 
-- Nome do integrante 1
-- Nome do integrante 2
-- Nome do integrante 3
-- Nome do integrante 4
+- Gustavo Alves
+- Allan Cristian
+- Luiz Felipe
+- Lourenço Hanbam
 
 ## Estrutura do projeto
 
@@ -22,19 +22,12 @@ Este repositório é um template para os grupos da disciplina. A proposta é com
 
 ## Descrição do jogo
 
-Descreva brevemente a ideia principal do jogo.
 
-Exemplo:
-
-> O jogo consiste em controlar um personagem que deve coletar moedas e evitar obstáculos. O jogador ganha pontos ao coletar itens e perde vidas ao colidir com obstáculos. A partida termina quando o tempo acaba ou quando o jogador perde todas as vidas.
+> O jogo consiste em controlar uma nave que deve atirar para destruir os meteoros para ganhar pontos e evita-los. O jogador perde vidas ao colidir com o meteoro. A partida termina quando o jogador perde todas as vidas.
 
 ## Objetivo do jogador
 
-Explique o que o jogador precisa fazer para vencer ou avançar no jogo.
-
-Exemplo:
-
-> O objetivo é coletar a maior quantidade possível de itens antes que o tempo acabe, evitando colisões com os obstáculos.
+> O objetivo é fazer a maior quantidade possível de pontos, evitando colisões com os meteoros
 
 ## Regras do jogo
 
@@ -42,10 +35,10 @@ Liste as principais regras do jogo.
 
 Exemplo:
 
-- O jogador se movimenta usando as setas do teclado.
-- Cada item coletado aumenta a pontuação.
-- Colidir com um obstáculo reduz a quantidade de vidas.
-- A partida termina quando o jogador perde todas as vidas ou quando o tempo acaba.
+- O jogador se movimenta usando as setas e o w/a/s/d do teclado.
+- Cada meteoro destruido aumenta a pontuação.
+- Colidir com um meteoro reduz a quantidade de vidas.
+- A partida termina quando o jogador perde todas as vidas.
 
 ## Controles
 
@@ -57,8 +50,11 @@ Exemplo:
 - Seta para baixo: mover para baixo
 - Seta para esquerda: mover para esquerda
 - Seta para direita: mover para direita
-- Espaço: realizar ação
-- ESC: sair do jogo
+- W : mover para cima
+- A : para baixo: mover para baixo
+- S : mover para esquerda
+- D : mover para direita
+- Espaço: Atirar
 
 ## Como executar o projeto
 
